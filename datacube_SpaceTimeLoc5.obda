@@ -1,0 +1,47 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/younesh/ontologies/2022/5/untitled-ontology-77#
+dcb:		http://www.semanticweb.org/younesh/ontologies/2022/5/untitled-ontology-77
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+geod:		http://www.opengis.net/ont/geosparql
+geof:		http://www.opengis.net/def/function/geosparql/
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[MappingDeclaration] @collection [[
+mappingId	Europe_Nuts_mapping
+target		dcb:#Europe_Nuts-{nut_id} a dcb:#Europe_Nuts ; dcb:#level_code {levl_code}^^xsd:integer ; dcb:#nut_name {name_latn}^^xsd:string ; geod:#hasGeometry dcb:#nutgeom-{nut_id} . dcb:#nutgeom-{nut_id} a geod:#Geometry ; geod:#asWKT {envelop}^^geod:#wktLiteral . 
+source		select  *  from urban_lense.nuts
+
+mappingId	Urban_area_mapping
+target		dcb:#ura-{ur_id} a dcb:#Urban_Area ; dcb:#urban_code {urau_code}^^xsd:string ; dcb:#area_name {urau_name}^^xsd:string ; geod:#hasGeometry dcb:#urageom-{ur_id} . dcb:#urageom-{ur_id} a geod:#Geometry ; geod:#asWKT {ura_geom}^^geod:#wktLiteral . 
+source		select  ur_id, urau_code, urau_name, st_astext(ST_SetSRID(geom, 4326)) as ura_geom from urban_area_europe
+
+mappingId	Field_Property_mapping
+target		dcb:fpv-{id_prop} a dcb:#FieldPropVar ; dcb:#hasPropName {prop_name}^^xsd:string ; dcb:#hasPropSet dcb:#dc-{ps_id} . 
+source		select *  from pgdatacube.datacube_properties
+
+mappingId	Field_atom_mapping
+target		dcb:fad-{id_fd} a dcb:#FieldAtom ; dcb:#xRelCoord {coord_rel_x}^^xsd:integer ; dcb:#yRelCoord {coord_rel_y}^^xsd:integer ; dcb:#asFieldWKT {field_loc}^^geod:#wktLiteral . 
+source		select id_fd, st_astext(field_loc) as field_loc,  coord_rel_x, coord_rel_y from pgdatacube.climate_dom
+
+mappingId	SpaceTimeLocation_mapping
+target		dcb:stl-{id_stl} a dcb:#SpaceTimeLoc ; dcb:#hasRelTime {time_index}^^xsd:integer ; dcb:#hasDateTime {stl_time}^^xsd:dateTimeStamp ; dcb:#hasSpatialRef dcb:fad-{id_fd} . 
+source		select * from pgdatacube.climate_stp
+
+mappingId	Field_prop_value_mapping
+target		dcb:fpval-{id_stlfv} a dcb:#FieldPropValue ; dcb:#hasFieldValue {fvalue} ; dcb:#hasVariableName {prop_name} ; dcb:#hasFieldProp dcb:fpv-{prop_id} ; dcb:#hasSTL dcb:stl-{id_stl} . 
+source		select * from pgdatacube.climate_fieldval
+
+mappingId	Datacube_coverage_mapping
+target		dcb:#dc-{id_ps} a dcb:#DataCube ; dcb:#dcHasName {ps_name}^^xsd:string ; dcb:#dcHasLabel {ps_label}^^xsd:string ; dcb:#hasCoverageParams dcb:cp-{id_cp} . dcb:cp-{id_cp} a dcb:#CoverageParams ; dcb:#xLeftCorner {upperleftx}^^xsd:double ; dcb:#yLeftCorner {upperlefty}^^xsd:double ; dcb:#xspatialSize {dc_width}^^xsd:integer ; dcb:#yspatialSize {dc_hight}^^xsd:integer . 
+source		select id_ps, ps_name, ps_label, dc.id_cp, upperleftx, upperlefty, dc_width, dc_hight from pgdatacube.property_set dc, pgdatacube.coverage_params cp
+			where dc.id_cp = cp.id_cp
+
+mappingId	Airport_mapping
+target		dcb:airp-{arp_id} a dcb:#Airport ; dcb:#city_name {airp_city}^^xsd:string ; dcb:#airport_name {airp_name_}^^xsd:string ; geod:#hasGeometry dcb:#airpgeom-{arp_id} . dcb:#airpgeom-{arp_id} a geod:#Geometry ; geod:#asWKT {arp_geom}^^geod:#wktLiteral . 
+source		select  id as arp_id, airp_city, airp_name_, st_astext(ST_SetSRID(geom, 4326)) as arp_geom  from "AIRP_PT_2013"
+]]
+

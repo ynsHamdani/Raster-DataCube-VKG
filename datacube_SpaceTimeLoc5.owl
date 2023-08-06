@@ -1,0 +1,602 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/younesh/ontologies/2022/5/untitled-ontology-77"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/younesh/ontologies/2022/5/untitled-ontology-77">
+    <Prefix name="" IRI="http://www.semanticweb.org/younesh/ontologies/2022/5/untitled-ontology-77#"/>
+    <Prefix name="dcb" IRI="http://www.semanticweb.org/younesh/ontologies/2022/5/untitled-ontology-77"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="geod" IRI="http://www.opengis.net/ont/geosparql"/>
+    <Prefix name="geof" IRI="http://www.opengis.net/def/function/geosparql/"/>
+    <Prefix name="obda" IRI="https://w3id.org/obda/vocabulary#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.opengis.net/ont/geosparql</Import>
+    <Declaration>
+        <Class IRI="http://www.opengis.net/ont/sf#Point"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.opengis.net/ont/sf#Polygon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Airport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CoverageParams"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataCube"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataCubeMetaData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Europe_Nuts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FieldAtom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FieldPropValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FieldPropVar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Geometry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaceTimeLoc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeExtent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeRef"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Urban_Area"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#DataCubeBinaryOperation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#FeaturehasGeom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongToDC"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dcHasMetaData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCoverageParams"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasField"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFieldProp"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPropSet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSTL"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpatialRef"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTemporalRef"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTimeExtent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#airport_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#area_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#asFieldWKT"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#city_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dcHasLabel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dcHasMetaProp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dcHasMetaValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dcHasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAbsTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDateTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFieldValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPropName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRelTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUnitMeasure"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasVariableName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#level_code"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nut_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#temporalsize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#timeExtendEnd"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#timeExtentStart"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#urban_code"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#xLeftCorner"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#xRelCoord"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#xspatialSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#yLeftCorner"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#yRelCoord"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#yspatialSize"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/date"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#SpaceTimeLoc"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasSpatialRef"/>
+                <Class IRI="#FieldAtom"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTemporalRef"/>
+                <Class IRI="#TimeRef"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasField"/>
+                <Class IRI="#FieldPropValue"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Airport"/>
+        <Class IRI="http://www.opengis.net/ont/geosparql#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Europe_Nuts"/>
+        <Class IRI="http://www.opengis.net/ont/geosparql#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FieldAtom"/>
+        <Class IRI="#Geometry"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Observation"/>
+        <Class IRI="#SpaceTimeLoc"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Observation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasField"/>
+            <Class IRI="#FieldPropValue"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Urban_Area"/>
+        <Class IRI="http://www.opengis.net/ont/geosparql#Feature"/>
+    </SubClassOf>
+    <DisjointUnion>
+        <Class IRI="#FieldAtom"/>
+        <Class IRI="http://www.opengis.net/ont/sf#Point"/>
+        <Class IRI="http://www.opengis.net/ont/sf#Polygon"/>
+    </DisjointUnion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#belongToDC"/>
+        <ObjectProperty IRI="#hasPropSet"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasField"/>
+        <ObjectProperty IRI="#hasSTL"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCoverageParams"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFieldProp"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSTL"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSpatialRef"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTemporalRef"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTimeExtent"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasField"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#DataCubeBinaryOperation"/>
+        <Class IRI="#DataCube"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FeaturehasGeom"/>
+        <Class IRI="http://www.opengis.net/ont/geosparql#Feature"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongToDC"/>
+        <Class IRI="#FieldPropVar"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dcHasMetaData"/>
+        <Class IRI="#DataCube"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCoverageParams"/>
+        <Class IRI="#DataCube"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasField"/>
+        <Class IRI="#SpaceTimeLoc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFieldProp"/>
+        <Class IRI="#FieldPropValue"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPropSet"/>
+        <Class IRI="#DataCube"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSTL"/>
+        <Class IRI="#FieldPropValue"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSpatialRef"/>
+        <Class IRI="#SpaceTimeLoc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTemporalRef"/>
+        <Class IRI="#SpaceTimeLoc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTimeExtent"/>
+        <Class IRI="#DataCube"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#DataCubeBinaryOperation"/>
+        <Class IRI="#DataCube"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FeaturehasGeom"/>
+        <Class IRI="#Geometry"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongToDC"/>
+        <Class IRI="#DataCube"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dcHasMetaData"/>
+        <Class IRI="#DataCubeMetaData"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCoverageParams"/>
+        <Class IRI="#CoverageParams"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasField"/>
+        <Class IRI="#FieldPropValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFieldProp"/>
+        <Class IRI="#FieldPropVar"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPropSet"/>
+        <Class IRI="#FieldPropVar"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSTL"/>
+        <Class IRI="#SpaceTimeLoc"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSpatialRef"/>
+        <Class IRI="#FieldAtom"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTemporalRef"/>
+        <Class IRI="#TimeRef"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTimeExtent"/>
+        <Class IRI="#TimeExtent"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#airport_name"/>
+        <Class IRI="#Airport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#area_name"/>
+        <Class IRI="#Urban_Area"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#asFieldWKT"/>
+        <Class IRI="#Geometry"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#city_name"/>
+        <Class IRI="#Airport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dcHasLabel"/>
+        <Class IRI="#DataCube"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dcHasMetaProp"/>
+        <Class IRI="#DataCubeMetaData"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dcHasMetaValue"/>
+        <Class IRI="#DataCubeMetaData"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dcHasName"/>
+        <Class IRI="#DataCube"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAbsTime"/>
+        <Class IRI="#TimeRef"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDateTime"/>
+        <Class IRI="#SpaceTimeLoc"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFieldValue"/>
+        <Class IRI="#FieldPropValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPropName"/>
+        <Class IRI="#FieldPropVar"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRelTime"/>
+        <Class IRI="#SpaceTimeLoc"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUnitMeasure"/>
+        <Class IRI="#FieldPropVar"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#level_code"/>
+        <Class IRI="#Europe_Nuts"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nut_name"/>
+        <Class IRI="#Europe_Nuts"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#temporalsize"/>
+        <Class IRI="#CoverageParams"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#timeExtendEnd"/>
+        <Class IRI="#TimeExtent"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#timeExtentStart"/>
+        <Class IRI="#TimeExtent"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#urban_code"/>
+        <Class IRI="#Urban_Area"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#xLeftCorner"/>
+        <Class IRI="#CoverageParams"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#xRelCoord"/>
+        <Class IRI="#FieldAtom"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#xspatialSize"/>
+        <Class IRI="#CoverageParams"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#yLeftCorner"/>
+        <Class IRI="#CoverageParams"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#yRelCoord"/>
+        <Class IRI="#FieldAtom"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#yspatialSize"/>
+        <Class IRI="#CoverageParams"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#airport_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#area_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#asFieldWKT"/>
+        <Datatype IRI="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#city_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#dcHasLabel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#dcHasMetaProp"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#dcHasMetaValue"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#dcHasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAbsTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDateTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFieldValue"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPropName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRelTime"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUnitMeasure"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#level_code"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nut_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#temporalsize"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#timeExtendEnd"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#timeExtentStart"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#urban_code"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#xLeftCorner"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#xRelCoord"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#xspatialSize"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#yLeftCorner"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#yRelCoord"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#yspatialSize"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
